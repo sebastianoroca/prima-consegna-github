@@ -16,15 +16,17 @@
 
         // Controllo che i valori inseriti siano positivi
         if ($base > 0 && $altezza > 0) {
-            // Calcolo di area e perimetro
+            // Calcolo di area, perimetro e diagonale
             $area = $base * $altezza;
             $perimetro = 2 * ($base + $altezza);
+            $diagonale = hypot($base, $altezza); // Teorema di Pitagora
 
-            // Stampa dei risultati
+            // Stampa di tutti i risultati
             echo "<p><strong>Base inserita:</strong> $base</p>";
             echo "<p><strong>Altezza inserita:</strong> $altezza</p>";
             echo "<p><strong>Area del rettangolo:</strong> $area</p>";
             echo "<p><strong>Perimetro del rettangolo:</strong> $perimetro</p>";
+            echo "<p><strong>Diagonale del rettangolo:</strong> " . number_format($diagonale, 2) . "</p>";
         } else {
             echo "<p style='color:red;'>Per favore inserisci valori maggiori di zero.</p>";
         }
